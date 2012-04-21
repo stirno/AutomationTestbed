@@ -1,0 +1,80 @@
+﻿<div class="row title">
+    <div>
+        <h1>Form Tests
+        <small>Web form testing</small></h1>
+    </div>
+</div>
+<div class="row">
+    <div class="span3">
+        <div class="inner">
+            <h3>Basic Form Entry</h3>
+            <p>Simple fields with basic validation</p>
+            <ul class="unstyled">
+                <li><a id="fluent-sample-net-1" href="#">Fluent API (.NET) Sample</a></li>
+                <li><a href="#">Fluent API (JavaScript) Sample</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="span9">
+        <form class="well form-horizontal form-test-01">
+            <div class="alert fade in alert-error" style="display:  none">Invalid form!</div>
+            <h4 style="margin-bottom: 15px">Sign up for our mailing list!</h4>
+            <div class="control-group">
+                <label class="control-label" for="form01input01">Name</label>
+                <div class="controls">
+                <input type="text" class="input-xlarge" name="form01input01" id="form01-input01">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="form01input02">Email Address</label>
+                <div class="controls">
+                <input type="text" class="input-xlarge" id="form01input02">
+                <p class="help-block">Email address must be valid.</p>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">Topics</label>
+                <div class="controls">
+                    <label class="checkbox">
+                        <input type="checkbox" name="optionsCheckboxList1" value="option1"> Cars
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" name="optionsCheckboxList3" value="option3"> Development
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" name="optionsCheckboxList2" value="option2"> Food
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-primary">Sign up!</button>
+                <button class="btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        // form-test-01
+        $("form.form-test-01").validate({
+            invalidHandler: function (form, validator) {
+                $("form.form-test-01 .alert").fadeIn();
+                setTimeout(function () {
+                    $("form.form-test-01").find(".error").parent().parent().addClass("error");
+                }, 10);
+            },
+            submitHandler: function() {
+                return false;
+            },
+            rules: {
+                form01input01: {
+                    required: true
+                },
+                form01input02: {
+                    required: true, email: true
+                }
+            }
+        });
+    });
+</script>

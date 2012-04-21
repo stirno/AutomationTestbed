@@ -1,0 +1,52 @@
+﻿
+/* Body and structure
+-------------------------------------------------- */
+body {
+  position: relative;
+}
+
+/* Tweak navbar brand link to be super sleek
+-------------------------------------------------- */
+.navbar-fixed-top .brand {
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 20px;
+    float: right;
+    font-weight: bold;
+    color: #666;
+    text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+    -webkit-transition: all .2s linear;
+        -moz-transition: all .2s linear;
+            transition: all .2s linear;
+}
+.navbar-fixed-top .brand:hover {
+    text-decoration: none;
+}
+
+div.right .quick-links {
+    min-height: 30px;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+div.right .quick-links li {
+    display: inline;
+    margin: 0 5px 0 0;
+    color: #999;
+}
+
+section.description {
+    float:  left;
+    font-weight:  300;
+}
+
+div.inner-container {
+    padding-top:  60px;
+}
+
+.row.title {
+    padding-bottom: 17px;
+    margin: 18px 0;
+    border-bottom: 1px solid #EEE;
+}
