@@ -4,11 +4,51 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/css")" rel="stylesheet" type="text/css" />
-    <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")" rel="stylesheet" type="text/css" />
-    <script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")"></script>
+    
+    <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/bootstrap-fluent.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-ui-1.8.19.min.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
 </head>
 <body>
-    @RenderBody()
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Automation Testbed</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/tests">All Tests</a>
+              </li>
+              <li class="">
+                <a href="/dragdrop">Drag/Drop</a>
+              </li>
+              <li class="">
+                <a href="/forms">Form Entry</a>
+              </li>
+              <li class="">
+                <a href="/interactive">Interactive</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+        <div class="inner-container">
+            @RenderBody()
+        </div>
+    </div>
 </body>
 </html>
