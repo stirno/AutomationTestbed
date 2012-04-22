@@ -1,0 +1,101 @@
+﻿<div class="row">
+    <div class="span3">
+        <div class="inner">
+            <h3>Confusing Selects</h3>
+            <p>Selects with strange values/name pairings</p>
+            <ul class="unstyled">
+                <li><a id="fluent-sample-net-ConfusingSelects" href="#">Fluent API (.NET) Sample</a></li>
+                <li><a href="#">Fluent API (JavaScript) Sample</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="span9">
+        <form class="well form-horizontal form-test-ConfusingSelects">
+            <div class="control-group">
+                <label class="control-label" for="ConfusingSelects01">Mismatched Values and Texts</label>
+                <div class="controls">
+                    <select name="ConfusingSelects01">
+                        <option value="1">0</option>
+                        <option value="2">1</option>
+                        <option value="3">2</option>
+                    </select>
+                    <input type="text" readonly="readonly" id="ConfusingSelects01Value" />
+                </div>
+            </div>
+            <script>
+    $('[name=ConfusingSelects01]').change(function () {
+        var selected = $(this).find(':selected')
+        $('#ConfusingSelects01Value').val('v:' + selected.val() + ';t:' + selected.text());
+    }).change();
+            </script>
+            <div class="control-group">
+                <label class="control-label" for="ConfusingSelects02">No Values</label>
+                <div class="controls">
+                    <select name="ConfusingSelects02">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                    </select>
+                    <input type="text" readonly="readonly" id="ConfusingSelects02Value" />
+                </div>
+            </div>
+            <script>
+    $('[name=ConfusingSelects02]').change(function () {
+        var selected = $(this).find(':selected')
+        $('#ConfusingSelects02Value').val( 'v:' + selected.val() + ';t:' + selected.text());
+    }).change();
+            </script>
+            <div class="control-group">
+                <label class="control-label" for="ConfusingSelects03">Duplicate Values and Names</label>
+                <div class="controls">
+                    <select name="ConfusingSelects03">
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="2">1</option>
+                        <option value="2">2</option>
+                    </select>
+                     <input type="text" readonly="readonly" id="ConfusingSelects03Value" />
+                </div>
+            </div>
+            <script>
+    $('[name=ConfusingSelects03]').change(function () {
+        var selected = $(this).find(':selected')
+        $('#ConfusingSelects03Value').val('v:' + selected.val() + ';t:' + selected.text());
+    }).change();
+            </script>
+            <div class="control-group">
+                <label class="control-label" for="ConfusingSelects04">Optgroups with no values and duplicate texts</label>
+                <div class="controls">
+                    <select name="ConfusingSelects04" multiple="multiple" style="height: 150px;">
+                        <optgroup label="0">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </optgroup>
+                        <optgroup label="1">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </optgroup>
+                    </select>
+                     <input type="text" readonly="readonly" id="ConfusingSelects04Value" />
+                </div>
+            </div>
+            <script>
+    $('[name=ConfusingSelects04]').change(function () {
+        var allOptions = [];
+        var selected = $(this).find(':selected').each(function () {
+            var $opt = $(this);
+            var optgroup = $opt.parent().attr("label");
+            allOptions.push('g:' + optgroup + ';v:' + $opt.val() + ';t:' + $opt.text());
+        });
+        $('#ConfusingSelects04Value').val( allOptions.join(',') );
+    }).change();
+            </script>
+            <div>
+                <button type="submit" class="btn btn-primary">Button</button>
+                <button class="btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
