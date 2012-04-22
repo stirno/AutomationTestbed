@@ -50,6 +50,8 @@ namespace AutomationTestbed.Controllers
                 data.Add(new { Name = builder.ToString() });
                 builder.Clear();
             }
+
+            System.Threading.Thread.Sleep(1000);
             
             return Json(data);
         }

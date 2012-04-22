@@ -279,6 +279,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Interactive\Buttons.cshtml" />
+    <Content Include="Views\Forms\ConfusingSelects.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
