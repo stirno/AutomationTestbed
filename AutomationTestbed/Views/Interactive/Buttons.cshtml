@@ -1,0 +1,26 @@
+﻿<div class="row">
+    <div class="span3">
+        <div class="inner">
+            <h3>Buttons</h3>
+            <p>Buttons that change colors when receiving various mouse events</p>
+            <ul class="unstyled">
+                <li><a id="fluent-sample-net-1" href="#">Fluent API (.NET) Sample</a></li>
+                <li><a href="#">Fluent API (JavaScript) Sample</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="span9">
+        <form class="well" id="button-form">
+            <button class="btn" type="button">Click</button>
+            <button class="btn" type="button">Double Click</button>
+            <button class="btn" type="button">Right Click</button>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#button-form button:eq(0)").click(function (e) { $(this).toggleClass("btn-primary"); });
+        $("#button-form button:eq(1)").dblclick(function (e) { $(this).toggleClass("btn-primary"); });
+        $("#button-form button:eq(2)").bind("contextmenu", function (e) { $(this).toggleClass("btn-primary"); });
+    });
+</script>
