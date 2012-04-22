@@ -18,6 +18,11 @@ namespace AutomationTestbed.Controllers
             return View();
         }
 
+        public ActionResult ShoppingCart()
+        {
+            return View();
+        }
+
         public ActionResult AutoCompleteData(String q)
         {
             List<Object> data = new List<Object>();
